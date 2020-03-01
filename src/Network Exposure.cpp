@@ -1,13 +1,15 @@
-
-
 #include <iostream>
 
 #define MAX_SIZE 1024
+
+// Initializing the Matrices W,Y,E
 
 int N;
 float W[MAX_SIZE][MAX_SIZE];
 float Y[MAX_SIZE];
 float E[MAX_SIZE];
+
+// Function to Enter Input data for N
 
 void input_data() {    
     std::cout << "Please input number N:\n";
@@ -26,6 +28,8 @@ void input_data() {
         std::cin >> Y[i];
 }
 
+// Function to Calculate NETWORK Exposure Model
+
 void calc_Network_Exposure() {
     int i, j;
 
@@ -39,6 +43,8 @@ void calc_Network_Exposure() {
     }
 }
 
+// Function for Output Display
+
 void output_data() {
     int i;
 
@@ -46,6 +52,8 @@ void output_data() {
     for (i = 0; i < N; i++)
         std::cout << E[i] << " ";    
 }
+
+// Calling Main 
 
 int main()
 {
