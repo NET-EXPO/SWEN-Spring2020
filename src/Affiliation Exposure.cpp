@@ -4,6 +4,8 @@
 
 #define MAX_SIZE 1024
 
+//initializing the matrices C,Y,F
+
 int N;
 float C[MAX_SIZE][MAX_SIZE];
 float Y[MAX_SIZE];
@@ -14,6 +16,7 @@ float sgn(float value) {
     if (value < 0)   return -1;
     if (value > 0)   return 1;
 }
+//Function to enter input data for N
 
 void input_data() {    
     std::cout << "Please input number N:\n";
@@ -32,6 +35,7 @@ void input_data() {
         std::cin >> Y[i];
 }
 
+//Function to calculate Affilitaion Exposure Model
 void calc_Affiliation_Exposure() {
     int i, j;
 
@@ -45,6 +49,7 @@ void calc_Affiliation_Exposure() {
     }
 }
 
+// Function for output display
 void output_data() {
     int i;
 
@@ -52,7 +57,7 @@ void output_data() {
     for (i = 0; i < N; i++)
         std::cout << F[i] << " ";
 }
-
+// Calling Main methods
 int main()
 {
     input_data();
