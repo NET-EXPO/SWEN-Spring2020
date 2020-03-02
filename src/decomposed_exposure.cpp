@@ -4,17 +4,21 @@
 
 #define MAX_SIZE 1024
 
+//Created C1, Y, D1, D2 matrices
 int N;
 float C1[MAX_SIZE][MAX_SIZE], C2[MAX_SIZE][MAX_SIZE];
 float Y[MAX_SIZE];
 float D1[MAX_SIZE], D2[MAX_SIZE];
 
+//Binarizing the values sgn
 float sgn(float value) {
     if (value == 0)  return 0;
     if (value < 0)   return -1;
     if (value > 0)   return 1;
 }
 
+
+//Function to take the input data 
 void input_data() {
     std::cout << "Please input number N:\n";
     std::cin >> N;
@@ -36,6 +40,7 @@ void input_data() {
         std::cin >> Y[i];
 }
 
+//Function to calculate D1 and D2 matrices 
 void calc_Decomposed_Network() {
     int i, j;
 
@@ -58,6 +63,7 @@ void calc_Decomposed_Network() {
     }
 }
 
+//Function to display the output matrix 
 void output_data() {
     int i;
 
