@@ -15,32 +15,32 @@ float Y[MAX_SIZE];
 float E[MAX_SIZE];
 // function to print cell
 
-void read()
-{
-	std::ifstream  data("dyad_ties.csv");
-	std::string line;
-	int row_number = 0;
-	while (std::getline(data, line))
-	{
-		row_number = row_number + 1;
-		std::stringstream lineStream(line);
-		std::string cell;
-		std::vector<std::string> parsedRow;
-		while (std::getline(lineStream, cell, ','))
-		{
-			parsedRow.push_back(cell);
-		}
-		if (row_number > 1)
-		{
-			int source = stoi(parsedRow.at(0));
-			int target = stoi(parsedRow.at(1));
-			cout << row_number << " " << source << " " << target << endl;
+// void read()
+// {
+// 	std::ifstream  data("dyad_ties.csv");
+// 	std::string line;
+// 	int row_number = 0;
+// 	while (std::getline(data, line))
+// 	{
+// 		row_number = row_number + 1;
+// 		std::stringstream lineStream(line);
+// 		std::string cell;
+// 		std::vector<std::string> parsedRow;
+// 		while (std::getline(lineStream, cell, ','))
+// 		{
+// 			parsedRow.push_back(cell);
+// 		}
+// 		if (row_number > 1)
+// 		{
+// 			int source = stoi(parsedRow.at(0));
+// 			int target = stoi(parsedRow.at(1));
+// 			cout << row_number << " " << source << " " << target << endl;
 
-		}
-	}
+// 		}
+// 	}
 	
 
-}
+// }
 
 void input_data() {
 	std::ifstream  data("dyad_ties.csv");
