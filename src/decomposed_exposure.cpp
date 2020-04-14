@@ -1,6 +1,9 @@
 
-
 #include <iostream>
+#include<fstream>
+#include <vector>
+#include <sstream>
+using namespace std;
 
 #define MAX_SIZE 1024
 
@@ -18,26 +21,167 @@ float sgn(float value) {
 }
 
 
-//Function to take the input data 
+void read()
+{
+	std::ifstream  data1("dyad_ties1.csv");
+	std::string line;
+	int row_number = 0;
+	while (std::getline(data1, line))
+	{
+		row_number = row_number + 1;
+		std::stringstream lineStream(line);
+		std::string cell;
+		std::vector<std::string> parsedRow;
+		while (std::getline(lineStream, cell, ','))
+		{
+			parsedRow.push_back(cell);
+		}
+		if (row_number > 1)
+		{
+			int source = stoi(parsedRow.at(0));
+			int target = stoi(parsedRow.at(1));
+			cout << row_number << " " << source << " " << target << endl;
+
+		}
+	}
+	std::ifstream  data2("dyad_ties2.csv");
+	while (std::getline(data2, line))
+	{
+		row_number = row_number + 1;
+		std::stringstream lineStream(line);
+		std::string cell;
+		std::vector<std::string> parsedRow;
+		while (std::getline(lineStream, cell, ','))
+		{
+			parsedRow.push_back(cell);
+		}
+		if (row_number > 1)
+		{
+			int source = stoi(parsedRow.at(0));
+			int target = stoi(parsedRow.at(1));
+			cout << row_number << " " << source << " " << target << endl;
+
+		}
+	}
+	
+
+}
+
 void input_data() {
-    std::cout << "Please input number N:\n";
-    std::cin >> N;
+	std::ifstream  data1("dyad_ties1.csv");
+	std::string line;
+	int row_number = 0;
+	int max = 0;
+	while (std::getline(data1, line))
+	{
+		row_number = row_number + 1;
+		std::stringstream lineStream(line);
+		std::string cell;
+		std::vector<std::string> parsedRow;
+		while (std::getline(lineStream, cell, ','))
+		{
+			parsedRow.push_back(cell);
+		}
+		if (row_number > 1)
+		{
+			int source = stoi(parsedRow.at(0));
+			int target = stoi(parsedRow.at(1));
+			cout << row_number << " " << source << " " << target << endl;
+			C1[source][target] = 1;
+			if (max < source) {
+				max = source;
+			}
+			else if (max < target) {
+				max = target;
+			}
+		}
+	}
+	
+	std::ifstream  data1("dyad_ties2.csv");
+	while (std::getline(data2, line))
+	{
+		row_number = row_number + 1;
+		std::stringstream lineStream(line);
+		std::string cell;
+		std::vector<std::string> parsedRow;
+		while (std::getline(lineStream, cell, ','))
+		{
+			parsedRow.push_back(cell);
+		}
+		if (row_number > 1)
+		{
+			int source = stoi(parsedRow.at(0));
+			int target = stoi(parsedRow.at(1));
+			cout << row_number << " " << source << " " << target << endl;
+			C2[source][target] = 1;
+			if (max < source) {
+				max = source;
+			}
+			else if (max < target) {
+				max = target;
+			}
+		}
+	}
+	
 
-    int i, j;
+	//Define max after the input files is given, comparing the n value from both C1 and C2
+	N = max;
+	
+		cout << "Output C1" << endl;
+		for (int i = 0; i <= N; i++) {
+			for (int j = 0; j <= N; j++) {
+				cout << C1[i][j] << " ";
+			}
+			cout << endl;
+		}
+		
+		cout << "Output C2" << endl;
+		for (int i = 0; i <= N; i++) {
+			for (int j = 0; j <= N; j++) {
+				cout << C2[i][j] << " ";
+			}
+			cout << endl;
+		}
+	
+		std::cout << "Input Y_Matrix:\n";
 
-    std::cout << "Please input C1_Matrix:\n";
-    for (i = 0; i < N; i++) 
-        for (j = 0; j < N; j++) 
-            std::cin >> C1[i][j];
+		std::ifstream  data_y("y.csv");
+		row_number = 0;
+		max = 0;
+		while (std::getline(data_y, line))
+		{
+			row_number = row_number + 1;
+			std::stringstream lineStream(line);
+			std::string cell;
+			std::vector<std::string> parsedRow;
+			while (std::getline(lineStream, cell, ','))
+			{
+				parsedRow.push_back(cell);
+			}
+			if (row_number > 1)
+			{
+				int id = stoi(parsedRow.at(0));
+				int y = stoi(parsedRow.at(1));
+				cout << row_number << " " << id << " " << y << endl;
+				Y[id] = y;
+				if (max < id) {
+					max = id;
+				}
+				
+			}
+		}
 
-    std::cout << "Please input C2_Matrix:\n";
-    for (i = 0; i < N; i++) 
-        for (j = 0; j < N; j++) 
-            std::cin >> C2[i][j];
 
-    std::cout << "Please input Y_Matrix:\n";
-    for (i = 0; i < N; i++)
-        std::cin >> Y[i];
+		N = max;
+
+		cout << "Output Y" << endl;
+		for (int i = 0; i <= N; i++) {
+				cout <<i<<" "<< Y[i] << " "<<endl;
+			
+		}
+	
+
+
 }
 
 //Function to calculate D1 and D2 matrices 
@@ -83,5 +227,6 @@ int main()
 
     output_data();
 }
+
 
 
