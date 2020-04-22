@@ -1,0 +1,3 @@
+﻿  NetworkRobust.cpp
+c:\users\achyutha\desktop\networkrobust\networkrobust\networkrobust.cpp(124): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  NetworkRobust.vcxproj -> C:\Users\Achyutha\Desktop\NetworkRobust\Debug\NetworkRobust.exe
