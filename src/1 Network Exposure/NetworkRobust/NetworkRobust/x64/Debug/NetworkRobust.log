@@ -1,0 +1,10 @@
+﻿  NetworkRobust.cpp
+c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(124): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(207): error C2664: 'HANDLE FindFirstFileA(LPCSTR,LPWIN32_FIND_DATAA)': cannot convert argument 1 from 'WCHAR *' to 'LPCSTR'
+  c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(207): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(216): error C2664: 'int WideCharToMultiByte(UINT,DWORD,LPCWCH,int,LPSTR,int,LPCCH,LPBOOL)': cannot convert argument 3 from 'CHAR [260]' to 'LPCWCH'
+  c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(216): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(246): error C2664: 'HANDLE FindFirstFileA(LPCSTR,LPWIN32_FIND_DATAA)': cannot convert argument 1 from 'WCHAR *' to 'LPCSTR'
+  c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(246): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(255): error C2664: 'int WideCharToMultiByte(UINT,DWORD,LPCWCH,int,LPSTR,int,LPCCH,LPBOOL)': cannot convert argument 3 from 'CHAR [260]' to 'LPCWCH'
+  c:\users\achyutha\source\repos\networkrobust\networkrobust\networkrobust.cpp(255): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast

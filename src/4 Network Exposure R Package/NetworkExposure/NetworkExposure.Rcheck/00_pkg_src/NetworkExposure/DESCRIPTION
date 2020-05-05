@@ -1,0 +1,16 @@
+Package: NetworkExposure
+Type: Package
+Title: Netowrk Exposure
+Version: 1.0
+Date: 2020-04-10
+Author: Your Name
+Maintainer: Your Name <your@email.com>
+Description: Calculates Network Exposure
+License: GPL (>= 2)
+Imports: Rcpp (>= 1.0.3)
+LinkingTo: Rcpp
+Suggests: testthat
+RoxygenNote: 7.1.0
+NeedsCompilation: yes
+Packaged: 2020-04-13 19:40:00 UTC; Achyutha
+Depends: R (>= 3.5.0)

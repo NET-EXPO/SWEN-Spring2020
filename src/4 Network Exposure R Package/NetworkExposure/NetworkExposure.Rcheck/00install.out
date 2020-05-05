@@ -1,0 +1,34 @@
+* installing *source* package 'NetworkExposure' ...
+** using staged installation
+** libs
+
+*** arch - i386
+C:/Rtools/mingw_32/bin/g++  -I"C:/PROGRA~1/R/R-36~1.1/include" -DNDEBUG  -I"C:/Users/Achyutha/Documents/R/win-library/3.6/Rcpp/include"        -O2 -Wall  -mtune=generic -c RcppExports.cpp -o RcppExports.o
+C:/Rtools/mingw_32/bin/g++  -I"C:/PROGRA~1/R/R-36~1.1/include" -DNDEBUG  -I"C:/Users/Achyutha/Documents/R/win-library/3.6/Rcpp/include"        -O2 -Wall  -mtune=generic -c network_exposure.cpp -o network_exposure.o
+network_exposure.cpp: In function 'void input_data(std::string, std::string)':
+network_exposure.cpp:24:39: error: no matching function for call to 'std::basic_ifstream<char>::basic_ifstream(std::string&)'
+     std::ifstream  data(dyad_ties_file);
+                                       ^
+network_exposure.cpp:24:39: note: candidates are:
+In file included from network_exposure.cpp:3:0:
+C:/Rtools/mingw_32/i686-w64-mingw32/include/c++/fstream:470:7: note: std::basic_ifstream<_CharT, _Traits>::basic_ifstream(const char*, std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; std::ios_base::openmode = std::_Ios_Openmode]
+       basic_ifstream(const char* __s, ios_base::openmode __mode = ios_base::in)
+       ^
+C:/Rtools/mingw_32/i686-w64-mingw32/include/c++/fstream:470:7: note:   no known conversion for argument 1 from 'std::string {aka std::basic_string<char>}' to 'const char*'
+C:/Rtools/mingw_32/i686-w64-mingw32/include/c++/fstream:456:7: note: std::basic_ifstream<_CharT, _Traits>::basic_ifstream() [with _CharT = char; _Traits = std::char_traits<char>]
+       basic_ifstream() : __istream_type(), _M_filebuf()
+       ^
+C:/Rtools/mingw_32/i686-w64-mingw32/include/c++/fstream:456:7: note:   candidate expects 0 arguments, 1 provided
+C:/Rtools/mingw_32/i686-w64-mingw32/include/c++/fstream:430:11: note: std::basic_ifstream<char>::basic_ifstream(const std::basic_ifstream<char>&)
+     class basic_ifstream : public basic_istream<_CharT, _Traits>
+           ^
+C:/Rtools/mingw_32/i686-w64-mingw32/include/c++/fstream:430:11: note:   no known conversion for argument 1 from 'std::string {aka std::basic_string<char>}' to 'const std::basic_ifstream<char>&'
+network_exposure.cpp:40:46: error: 'stoi' was not declared in this scope
+             int source = stoi(parsedRow.at(0));
+                                              ^
+network_exposure.cpp:72:42: error: 'stoi' was not declared in this scope
+             int id = stoi(parsedRow.at(0));
+                                          ^
+make: *** [C:/PROGRA~1/R/R-36~1.1/etc/i386/Makeconf:215: network_exposure.o] Error 1
+ERROR: compilation failed for package 'NetworkExposure'
+* removing 'C:/Users/Achyutha/Downloads/NetworkExposure/NetworkExposure.Rcheck/NetworkExposure'

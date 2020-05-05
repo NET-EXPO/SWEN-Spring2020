@@ -1,0 +1,5 @@
+﻿  Affcode.cpp
+c:\users\achyutha\source\repos\affiliationexp\affiliationexp\affcode.cpp(132): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\achyutha\source\repos\affiliationexp\affiliationexp\affcode.cpp(141): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\achyutha\source\repos\affiliationexp\affiliationexp\affcode.cpp(197): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  AffiliationExp.vcxproj -> C:\Users\Achyutha\source\repos\AffiliationExp\Debug\AffiliationExp.exe
